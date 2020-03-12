@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+    int *ptr,n,m,*ptr1,i;
+    printf("enter the limit");
+    scanf("%d",&n);
+    ptr=(int*)malloc(n*sizeof(int));
+    for(i=0; i<n; i++)
+    {
+        scanf("%d",(ptr+i));
+    }
+    printf("enter the second aray limit");
+    scanf("%d",&m);
+    ptr1=(int*)malloc(m*sizeof(int));
+    for(i=0; i<m; i++)
+    {
+        scanf("%d",(ptr1+i));
+    }
+    for(i=0; i<m; i++)
+    {
+        *(ptr+i+n)= *(ptr1+i);
+    }
+    for(i=0; i<m+n; i++)
+    printf("%d",*(ptr+i));
+}
